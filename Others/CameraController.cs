@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour
             selfTransform.RotateAround(targetPoint.position, Vector3.up, mouseX * speed);
         }
     }
-}*//*
+}*/
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -131,79 +131,5 @@ public class CameraController : MonoBehaviour
             selfTransform.RotateAround(targetPoint.position, Vector3.up, mouseX * speed);
             selfTransform.RotateAround(targetPoint.position, selfTransform.right, -mouseY * speed); 
         }
-    }
-}*/
-using UnityEngine;
-
-public class CameraController : MonoBehaviour
-{
-    public float speed;
-    public float zoomSpeed;
-    public float minZoomDistance;
-    public float maxZoomDistance;
-    public Transform targetPoint;
-
-    private Transform selfTransform;
-    private bool isMoving = false;
-    private bool isRightClicking = false;
-
-    private void Start()
-    {
-        selfTransform = GetComponent<Transform>();
-    }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            isMoving = true;
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            isMoving = false;
-        }
-
-        if (isMoving)
-        {
-            Vector3 targetPosition = GetTargetPosition();
-            targetPosition.y = selfTransform.position.y; // Keep the same Y position
-            selfTransform.position = Vector3.MoveTowards(selfTransform.position, targetPosition, speed * Time.deltaTime);
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            isRightClicking = true;
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            isRightClicking = false;
-        }
-
-        if (isRightClicking)
-        {
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
-            selfTransform.RotateAround(targetPoint.position, Vector3.up, mouseX * speed);
-            selfTransform.RotateAround(targetPoint.position, selfTransform.right, -mouseY * speed);
-        }
-
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        Vector3 zoomDirection = selfTransform.position - targetPoint.position;
-        float zoomDistance = zoomDirection.magnitude;
-        zoomDistance = Mathf.Clamp(zoomDistance - scroll * zoomSpeed, minZoomDistance, maxZoomDistance);
-        selfTransform.position = targetPoint.position + zoomDirection.normalized * zoomDistance;
-    }
-
-    private Vector3 GetTargetPosition()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane plane = new Plane(Vector3.up, targetPoint.position);
-        float distance;
-        if (plane.Raycast(ray, out distance))
-        {
-            return ray.GetPoint(distance);
-        }
-        return selfTransform.position;
     }
 }
