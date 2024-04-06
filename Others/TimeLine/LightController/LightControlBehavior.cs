@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.Playables;
-//полная версия тут https://www.youtube.com/watch?v=LSrcQJHDUT4&list=PLmXKnJbgQ2cqGG4WwuE43L-kwmb3C0-1x&index=11&ab_channel=25games
-//вторая часть тут https://www.youtube.com/watch?v=-bptgHPebDw&list=PLmXKnJbgQ2cqGG4WwuE43L-kwmb3C0-1x&index=12&ab_channel=25games
 
 [Serializable]
 public class LightControlBehavior : PlayableBehaviour
@@ -55,6 +53,5 @@ public class LightControlBehavior : PlayableBehaviour
         light.bounceIntensity = _defaultBounceIntensity;
         light.range = _defaultRange;
 
-        //base.OnBehaviourPause(playable, info);
     }
 }

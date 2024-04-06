@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Playables;
-//оригинал вот тут https://www.youtube.com/watch?v=12bfRIvqLW4
 
 public class SubtitleTrackMixer : PlayableBehaviour
 {

@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class DamageScript : MonoBehaviour
 {
-    public int HP; //здоровье
-    public int maxHP; // максимальное здоровье
+    public int HP; 
+    public int maxHP; 
 
-    //public delegate void DeathAction();
-    //public static event DeathAction OnEnemyDeath;
+    public delegate void DeathAction();
+    public static event DeathAction OnEnemyDeath;
 
-    public void TakeDamage(int damage) //«доровье - урон
+    public void TakeDamage(int damage)
     {
         HP -= damage;
 
         if (HP <= 0)
         {
             Destroy(this.gameObject);
-            //OnEnemyDeath?.Invoke();
+            OnEnemyDeath?.Invoke();
         }
     }
 }

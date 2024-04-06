@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
-//оригинал вот тут https://www.youtube.com/watch?v=12bfRIvqLW4
 public class SubtitleBehaviour : PlayableBehaviour
 {
     public string subtitleText;

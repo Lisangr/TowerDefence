@@ -3,7 +3,7 @@ using UnityEngine;
 public class Builds : MonoBehaviour
 {
     public Renderer mainRenderer;
-    public Vector3Int Size = Vector3Int.one; //размер здания на сетке
+    public Vector3Int Size = Vector3Int.one;
 
     public void SetTransparent(bool available)
     {

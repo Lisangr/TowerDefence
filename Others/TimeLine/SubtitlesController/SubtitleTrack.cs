@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine.Timeline;
 using UnityEngine.Playables;
 using UnityEngine;
-//оригинал вот тут https://www.youtube.com/watch?v=12bfRIvqLW4
 
 [TrackBindingType(typeof(TextMeshProUGUI))]
 [TrackClipType(typeof(SubtitleClip))]

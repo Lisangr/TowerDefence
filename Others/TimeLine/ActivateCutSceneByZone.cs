@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.Playables;
-//предварительно создаем коллайдер, ставим ему триггер и также нужно накинуть RigidBody в 
-//статусе isKinematic 
 
 public class ActivateCutSceneByZone : MonoBehaviour
 {/*

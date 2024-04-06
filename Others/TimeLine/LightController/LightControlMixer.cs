@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.Playables;
-//полная версия тут https://www.youtube.com/watch?v=LSrcQJHDUT4&list=PLmXKnJbgQ2cqGG4WwuE43L-kwmb3C0-1x&index=11&ab_channel=25games
-//вторая часть тут https://www.youtube.com/watch?v=-bptgHPebDw&list=PLmXKnJbgQ2cqGG4WwuE43L-kwmb3C0-1x&index=12&ab_channel=25games
 
 public class LightControlMixer : PlayableBehaviour
 {
@@ -60,8 +58,7 @@ public class LightControlMixer : PlayableBehaviour
         light.range = blendedRange;
         light.bounceIntensity = blendedBounceIntensity;
     }
-    public override void OnPlayableDestroy(Playable playable)//или все таки
-//public override void OnBehaviourPause(Playable playable, FrameData info)
+    public override void OnPlayableDestroy(Playable playable)
     {
         firstFrameHappened = false;
 
@@ -73,6 +70,5 @@ public class LightControlMixer : PlayableBehaviour
         light.bounceIntensity = defaultBounceIntensity;
         light.range = defaultRange;
 
-        //base.OnBehaviourPause(playable, info);
     }
 }
